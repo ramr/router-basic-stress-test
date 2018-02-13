@@ -22,7 +22,7 @@ function delete_routes() {
 }
 
 
-function stress_route_update() {
+function stress_route_recreate() {
   local n=${1:-$NROUTES}
   local name="stress1"
   for i in `seq $n`; do
@@ -41,7 +41,7 @@ case "${script}" in
 
   delete-routes) delete_routes  "$@"           ;;
 
-  stress-update) stress_route_update  "$@"     ;;
+  stress-recreate) stress_route_recreate  "$@" ;;
 
   *)  echo "ERROR: unknown script ${script} "  ;;
 esac
